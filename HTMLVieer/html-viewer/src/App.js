@@ -7,6 +7,8 @@ import {
 import { useState, useEffect } from "react";
 import { getHtmlFile } from "./API/MainAPI";
 import { Button, Row, Col } from "antd";
+import root from "react-shadow";
+import "./CSS/Main.css";
 
 function App() {
   const [htmlBuffer, setHtmlBuffer] = useState("");
@@ -27,7 +29,9 @@ function App() {
               <Html5Outlined />
             </Button>
           ) : (
-            <div dangerouslySetInnerHTML={{ __html: htmlBuffer }} />
+            <root.div className="quote">
+              <div dangerouslySetInnerHTML={{ __html: htmlBuffer }} />
+            </root.div>
           )}
         </Col>
         <Col span={4}>
@@ -44,6 +48,9 @@ function App() {
               <Button onClick={getHTMLDoc} shape={"round"} size={"middle"}>
                 <ZoomOutOutlined />
               </Button>
+              <b>
+                <p className={"fc3"}>I am the proof!</p>
+              </b>
             </Col>
           </Row>
         </Col>
